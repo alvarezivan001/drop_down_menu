@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="header">
+        <div id="menu" class="dropdown" onmouseleave="hidedropdown(this)" onmouseover="showdropdown(this)">Menu
+            <div id="menu-list" class="dropdown invisible">
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+<style>
+    body {
+        display: flex;
+    }
+    #header {
+        flex: 1;
+        height: 50px;
+        background-color: gray;
+    }
+    #menu {
+        font-weight: bolder;
+        color: aliceblue;
+        width: fit-content;
+        height: 100%;
+        background-color: black;
+    }
+    #menu-list {
+        background-color: lightgray;
+        /* position: relative; */
+    }
+    .invisible {
+        display: none;
+    }
+</style>
+<script>
+    function showdropdown(x) {
+        var name = x.id + '-list';
+        var list = document.getElementById(name);
+        list.classList.remove('invisible');
+    };
+    function hidedropdown(x) {
+        var name = x.id+ '-list';
+        var list = document.getElementById(name);
+        list.classList.add('invisible');
+    }
+</script>
+</html>
